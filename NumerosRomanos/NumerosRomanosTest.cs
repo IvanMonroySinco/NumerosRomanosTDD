@@ -19,6 +19,6 @@ public class ConvertidorNumerosRomanos
 {
     public object Convertir(int i)
     {
-        throw new NotImplementedException();
+        return "I";
     }
 }
