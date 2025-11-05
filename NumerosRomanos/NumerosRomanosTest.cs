@@ -13,6 +13,16 @@ public class NumerosRomanosTest
         
         conversion.Should().Be("I"); 
     }
+
+    [Fact]
+    public void Si_SeConvierteNumeroDos_Debe_RetornarII()
+    {
+        var numerosRomanos = new ConvertidorNumerosRomanos();
+        
+        var conversion = numerosRomanos.Convertir(2);
+        
+        conversion.Should().Be("II"); 
+    }
 }
 
 public class ConvertidorNumerosRomanos
