@@ -119,6 +119,16 @@ public class NumerosRomanosTest
         
         conversion.Should().Be("CD"); 
     }
+    
+    [Fact]
+    public void Si_ConvierteNumeroQuinientos_Debe_RetornarD()
+    {
+        var numerosRomanos = new ConvertidorNumerosRomanos();
+        
+        var conversion = numerosRomanos.Convertir(500);
+        
+        conversion.Should().Be("D"); 
+    }
 
     
 }
