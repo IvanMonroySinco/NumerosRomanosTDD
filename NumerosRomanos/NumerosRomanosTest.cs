@@ -45,6 +45,15 @@ public class NumerosRomanosTest
         conversion.Should().Be("VI"); 
     }
 
+    [Fact]
+    public void Si_SeConvierteNumeroOcho_Debe_RetornarVIII()
+    {
+        var numerosRomanos = new ConvertidorNumerosRomanos();
+        
+        var conversion = numerosRomanos.Convertir(8);
+        
+        conversion.Should().Be("VIII"); 
+    }
 }
 
 public class ConvertidorNumerosRomanos
