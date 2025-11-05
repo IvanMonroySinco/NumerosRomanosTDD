@@ -98,15 +98,25 @@ public class NumerosRomanosTest
         
         conversion.Should().Be(resultadoEsperado); 
     }
-    
+
+    [Fact]
+    public void Si_SeConvierteNumeroNoventa_Debe_RetornarXC()
+    {
+     
+        var numerosRomanos = new ConvertidorNumerosRomanos();
+        
+        var conversion = numerosRomanos.Convertir(90);
+        
+        conversion.Should().Be("XC");    
+    }
 }
 
 public class ConvertidorNumerosRomanos
 {
     public string Convertir(int numero)
     {
-        if (numero == 50) return "L";
-        if (numero == 40) return "XL";
+        if (numero >= 50 && numero < 60) return $"L{Convertir(numero-50)}";;
+        if (numero >= 40 && numero < 50 ) return $"XL{Convertir(numero-40)}";
         if (numero >= 10)
         {
             int decenas = numero / 10;
