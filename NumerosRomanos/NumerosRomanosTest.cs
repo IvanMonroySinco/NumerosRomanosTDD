@@ -100,14 +100,14 @@ public class NumerosRomanosTest
     }
 
     [Fact]
-    public void Si_SeConvierteNumeroNoventa_Debe_RetornarXC()
+    public void Si_SeConvierteNumeroCien_Debe_RetornarC()
     {
      
         var numerosRomanos = new ConvertidorNumerosRomanos();
         
-        var conversion = numerosRomanos.Convertir(90);
+        var conversion = numerosRomanos.Convertir(100);
         
-        conversion.Should().Be("XC");    
+        conversion.Should().Be("C");    
     }
 }
 
@@ -115,6 +115,8 @@ public class ConvertidorNumerosRomanos
 {
     public string Convertir(int numero)
     {
+        if (numero >= 100 && numero < 110) return $"C{Convertir(numero-100)}";;
+        if (numero >= 90 && numero < 100) return $"XC{Convertir(numero-90)}";;
         if (numero >= 50 && numero < 60) return $"L{Convertir(numero-50)}";;
         if (numero >= 40 && numero < 50 ) return $"XL{Convertir(numero-40)}";
         if (numero >= 10)
