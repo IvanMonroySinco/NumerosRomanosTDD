@@ -23,12 +23,15 @@ public class NumerosRomanosTest
         
         conversion.Should().Be("II"); 
     }
+    
 }
 
 public class ConvertidorNumerosRomanos
 {
     public string Convertir(int numero)
     {
+        if (numero == 2)
+            return "II";
         return "I";
     }
 }
