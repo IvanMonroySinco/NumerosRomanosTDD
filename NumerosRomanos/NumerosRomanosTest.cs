@@ -110,6 +110,16 @@ public class NumerosRomanosTest
         conversion.Should().Be("C"); 
     }
     
+    [Fact]
+    public void Si_ConvierteNumeroCuatrocientos_Debe_RetornarCD()
+    {
+        var numerosRomanos = new ConvertidorNumerosRomanos();
+        
+        var conversion = numerosRomanos.Convertir(400);
+        
+        conversion.Should().Be("CD"); 
+    }
+
     
 }
 
