@@ -55,16 +55,6 @@ public class NumerosRomanosTest
         
         conversion.Should().Be("IX"); 
     }
-        
-    [Fact]
-    public void Si_SeConvierteNumeroDiez_Debe_RetornarX()
-    {
-        var numerosRomanos = new ConvertidorNumerosRomanos();
-        
-        var conversion = numerosRomanos.Convertir(10);
-        
-        conversion.Should().Be("X"); 
-    }
     
     [Theory]
     [InlineData(10, "X"),InlineData(20, "XX"),InlineData(30, "XXX")]
@@ -76,8 +66,16 @@ public class NumerosRomanosTest
         
         conversion.Should().Be(resultadoEsperado); 
     }
-    
-    
+
+    [Fact]
+    public void Si_SeConvierteNumeroCuarenta_Debe_RetornarXL()
+    {
+        var numerosRomanos = new ConvertidorNumerosRomanos();
+        
+        var conversion = numerosRomanos.Convertir(40);
+        
+        conversion.Should().Be("XL"); 
+    }
     
 }
 
