@@ -130,7 +130,15 @@ public class NumerosRomanosTest
         conversion.Should().Be("D"); 
     }
 
-    
+    [Fact]
+    public void Si_ConvierteNumeroNovecientos_Debe_RetornarCM()
+    {
+        var numerosRomanos = new ConvertidorNumerosRomanos();
+        
+        var conversion = numerosRomanos.Convertir(900);
+        
+        conversion.Should().Be("CM"); 
+    }    
 }
 
 public class ConvertidorNumerosRomanos
