@@ -99,7 +99,15 @@ public class NumerosRomanosTest
         
         conversion.Should().Be(resultadoEsperado); 
     }
-    
+    [Fact]
+    public void Si_ConvierteNumeroCien_Debe_RetornarC()
+    {
+        var numerosRomanos = new ConvertidorNumerosRomanos();
+        
+        var conversion = numerosRomanos.Convertir(100);
+        
+        conversion.Should().Be("C"); 
+    }
 }
 
 public class ConvertidorNumerosRomanos
