@@ -4,34 +4,15 @@ namespace NumerosRomanos;
 
 public class NumerosRomanosTest
 {
-    [Fact]
-    public void Si_SeConvierteNumeroUno_Debe_RetornarI()
+    [Theory]
+    [InlineData(1, "I"),InlineData(2, "II"),InlineData(3, "III")]
+    public void Si_SeConvierteUnNumeroMenorACuatro_Debe_RetornarNVecesI(int numero, string resultadoEsperado)
     {
         var numerosRomanos = new ConvertidorNumerosRomanos();
         
-        var conversion = numerosRomanos.Convertir(1);
+        var conversion = numerosRomanos.Convertir(numero);
         
-        conversion.Should().Be("I"); 
-    }
-
-    [Fact]
-    public void Si_SeConvierteNumeroDos_Debe_RetornarII()
-    {
-        var numerosRomanos = new ConvertidorNumerosRomanos();
-        
-        var conversion = numerosRomanos.Convertir(2);
-        
-        conversion.Should().Be("II"); 
-    }
-    
-    [Fact]
-    public void Si_SeConvierteNumeroTres_Debe_RetornarIII()
-    {
-        var numerosRomanos = new ConvertidorNumerosRomanos();
-        
-        var conversion = numerosRomanos.Convertir(3);
-        
-        conversion.Should().Be("III"); 
+        conversion.Should().Be(resultadoEsperado); 
     }
     
     [Fact]
@@ -51,10 +32,8 @@ public class ConvertidorNumerosRomanos
     {
         if (numero == 4)
             return "IV";
-        if (numero == 3)
-            return "III";
-        if (numero == 2)
-            return "II";
+        if (numero < 4)
+            return new string('I', numero);
         return "I";
     }
 }
