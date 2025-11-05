@@ -34,25 +34,16 @@ public class NumerosRomanosTest
         
         conversion.Should().Be("V"); 
     }
-    
-    [Fact]
-    public void Si_SeConvierteNumeroSeis_Debe_RetornarVI()
-    {
-        var numerosRomanos = new ConvertidorNumerosRomanos();
-        
-        var conversion = numerosRomanos.Convertir(6);
-        
-        conversion.Should().Be("VI"); 
-    }
 
-    [Fact]
-    public void Si_SeConvierteNumeroOcho_Debe_RetornarVIII()
+    [Theory]
+    [InlineData(6, "VI"),InlineData(7, "VII"),InlineData(8, "VIII")]
+    public void Si_SeConvierteNumeroMayorACincoYMenorANueve_Debe_RetornarVSeguidoDeNVecesIMenosCinco(int numero, string resultadoEsperado)
     {
         var numerosRomanos = new ConvertidorNumerosRomanos();
         
-        var conversion = numerosRomanos.Convertir(8);
+        var conversion = numerosRomanos.Convertir(numero);
         
-        conversion.Should().Be("VIII"); 
+        conversion.Should().Be(resultadoEsperado); 
     }
 }
 
@@ -60,16 +51,14 @@ public class ConvertidorNumerosRomanos
 {
     public string Convertir(int numero)
     {
-        if (numero == 8)
-            return "VIII"; 
-        if (numero == 6)
-            return "VI"; 
         if (numero == 5)
             return "V";
         if (numero == 4)
             return "IV";
         if (numero < 4)
             return new string('I', numero);
+        if (numero < 9)
+            return "V" + new string('I', numero - 5);
         return "I";
     }
 }
