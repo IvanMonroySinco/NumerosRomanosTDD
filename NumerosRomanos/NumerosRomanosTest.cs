@@ -49,6 +49,8 @@ public class ConvertidorNumerosRomanos
 {
     public string Convertir(int numero)
     {
+        if (numero == 4)
+            return "IV";
         if (numero == 3)
             return "III";
         if (numero == 2)
