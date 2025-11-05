@@ -87,6 +87,17 @@ public class NumerosRomanosTest
         
         conversion.Should().Be("L"); 
     }
+
+    [Theory]
+    [InlineData(12, "XII"),InlineData(41, "XLI"),InlineData(55, "LV")]
+    public void Si_ConvierteUnNumeroConResiduo_Debe_IncluirSuCaracter(int numero, string resultadoEsperado)
+    {
+        var numerosRomanos = new ConvertidorNumerosRomanos();
+        
+        var conversion = numerosRomanos.Convertir(numero);
+        
+        conversion.Should().Be(resultadoEsperado); 
+    }
     
 }
 
@@ -94,6 +105,7 @@ public class ConvertidorNumerosRomanos
 {
     public string Convertir(int numero)
     {
+        if (numero == 50) return "L";
         if (numero == 40) return "XL";
         if (numero >= 10)
         {

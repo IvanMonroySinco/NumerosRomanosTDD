@@ -9,7 +9,8 @@
 [x] Si se convierte 10 debe retornar X
 [X] Si se convierte 30 debe retornar XXX
 [X] Si se convierte 40 debe retornar XL
-[] Si se convierte 50 debe retornar L
+[x] Si se convierte 50 debe retornar L
+
 
 
 
