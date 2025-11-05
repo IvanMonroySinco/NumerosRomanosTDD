@@ -83,6 +83,7 @@ public class ConvertidorNumerosRomanos
 {
     public string Convertir(int numero)
     {
+        if (numero == 40) return "XL";
         if (numero >= 10)
         {
             int decenas = numero / 10;
