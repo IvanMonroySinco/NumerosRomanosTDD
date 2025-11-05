@@ -24,6 +24,15 @@ public class NumerosRomanosTest
         conversion.Should().Be("II"); 
     }
     
+    [Fact]
+    public void Si_SeConvierteNumeroTres_Debe_RetornarIII()
+    {
+        var numerosRomanos = new ConvertidorNumerosRomanos();
+        
+        var conversion = numerosRomanos.Convertir(3);
+        
+        conversion.Should().Be("III"); 
+    }
 }
 
 public class ConvertidorNumerosRomanos
