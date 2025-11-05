@@ -137,6 +137,7 @@ public class ConvertidorNumerosRomanos
 {
     private static readonly (int numero, string simbolo)[] MapaCaracteres =
     {
+        (500, "D"),
         (400, "CD"),
         (100, "C"),
         (90, "XC"),
