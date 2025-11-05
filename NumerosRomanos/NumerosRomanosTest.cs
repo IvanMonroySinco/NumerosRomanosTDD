@@ -45,6 +45,16 @@ public class NumerosRomanosTest
         
         conversion.Should().Be(resultadoEsperado); 
     }
+    
+    [Fact]
+    public void Si_SeConvierteNumeroNueve_Debe_RetornarIX()
+    {
+        var numerosRomanos = new ConvertidorNumerosRomanos();
+        
+        var conversion = numerosRomanos.Convertir(9);
+        
+        conversion.Should().Be("IX"); 
+    }
 }
 
 public class ConvertidorNumerosRomanos
