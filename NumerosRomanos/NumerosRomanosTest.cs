@@ -76,6 +76,7 @@ public class ConvertidorNumerosRomanos
         if (numero < 4) return new string('I', numero);
         if (numero < 9) return "V" + new string('I', numero - 5);
         if (numero == 9) return "IX";
+        if (numero == 10) return "X";
         return "";
     }
 }

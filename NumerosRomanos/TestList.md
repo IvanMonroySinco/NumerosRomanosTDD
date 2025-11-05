@@ -6,7 +6,8 @@
 [X] Si se convierte 6 debe retornar VI
 [X] Si se convierte 8 debe retornar VIII
 [X] Si se convierte 9 debe retornar XI
-[] Si se convierte 10 debe retornar X 
+[x] Si se convierte 10 debe retornar X
+[] Si se convierte 30 debe retornar XXX
 
 
 
