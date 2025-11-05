@@ -17,7 +17,7 @@ public class NumerosRomanosTest
 
 public class ConvertidorNumerosRomanos
 {
-    public object Convertir(int i)
+    public string Convertir(int numero)
     {
         return "I";
     }
