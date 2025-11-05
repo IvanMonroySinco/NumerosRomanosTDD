@@ -77,6 +77,17 @@ public class NumerosRomanosTest
         conversion.Should().Be("XL"); 
     }
     
+    
+    [Fact]
+    public void Si_SeConvierteNumeroCincuenta_Debe_RetornarL()
+    {
+        var numerosRomanos = new ConvertidorNumerosRomanos();
+        
+        var conversion = numerosRomanos.Convertir(50);
+        
+        conversion.Should().Be("L"); 
+    }
+    
 }
 
 public class ConvertidorNumerosRomanos
