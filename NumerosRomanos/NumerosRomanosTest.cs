@@ -34,6 +34,16 @@ public class NumerosRomanosTest
         
         conversion.Should().Be("V"); 
     }
+    
+    [Fact]
+    public void Si_SeConvierteNumeroSeis_Debe_RetornarVI()
+    {
+        var numerosRomanos = new ConvertidorNumerosRomanos();
+        
+        var conversion = numerosRomanos.Convertir(6);
+        
+        conversion.Should().Be("VI"); 
+    }
 }
 
 public class ConvertidorNumerosRomanos
