@@ -24,6 +24,16 @@ public class NumerosRomanosTest
         
         conversion.Should().Be("IV"); 
     }
+    
+    [Fact]
+    public void Si_SeConvierteNumeroCinco_Debe_RetornarV()
+    {
+        var numerosRomanos = new ConvertidorNumerosRomanos();
+        
+        var conversion = numerosRomanos.Convertir(5);
+        
+        conversion.Should().Be("V"); 
+    }
 }
 
 public class ConvertidorNumerosRomanos
