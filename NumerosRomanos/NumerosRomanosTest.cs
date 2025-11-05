@@ -99,6 +99,7 @@ public class NumerosRomanosTest
         
         conversion.Should().Be(resultadoEsperado); 
     }
+    
     [Fact]
     public void Si_ConvierteNumeroCien_Debe_RetornarC()
     {
@@ -108,12 +109,15 @@ public class NumerosRomanosTest
         
         conversion.Should().Be("C"); 
     }
+    
+    
 }
 
 public class ConvertidorNumerosRomanos
 {
     private static readonly (int numero, string simbolo)[] MapaCaracteres =
     {
+        (100, "C"),
         (90, "XC"),
         (50, "L"),
         (40, "XL"),
