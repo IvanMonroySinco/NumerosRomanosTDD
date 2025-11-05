@@ -149,7 +149,18 @@ public class NumerosRomanosTest
         var conversion = numerosRomanos.Convertir(1000);
         
         conversion.Should().Be("M"); 
-    }  
+    }
+
+    [Theory]
+    [InlineData(722, "DCCXXII"),InlineData(1189, "MCLXXXIX"),InlineData(2264, "MMCCLXIV")]
+    public void Si_ConvierteUnNumerox_Debe_RetornarElNumeroRomano(int  numero, string resultadoEsperado)
+    {
+        var numerosRomanos = new ConvertidorNumerosRomanos();
+        
+        var conversion = numerosRomanos.Convertir(numero);
+        
+        conversion.Should().Be(resultadoEsperado);
+    }
 }
 
 public class ConvertidorNumerosRomanos
