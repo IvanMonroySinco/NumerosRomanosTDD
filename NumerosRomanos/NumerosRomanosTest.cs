@@ -33,6 +33,16 @@ public class NumerosRomanosTest
         
         conversion.Should().Be("III"); 
     }
+    
+    [Fact]
+    public void Si_SeConvierteNumeroCuatro_Debe_RetornarIV()
+    {
+        var numerosRomanos = new ConvertidorNumerosRomanos();
+        
+        var conversion = numerosRomanos.Convertir(4);
+        
+        conversion.Should().Be("IV"); 
+    }
 }
 
 public class ConvertidorNumerosRomanos
