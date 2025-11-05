@@ -7,7 +7,7 @@
 [X] Si se convierte 8 debe retornar VIII
 [X] Si se convierte 9 debe retornar XI
 [x] Si se convierte 10 debe retornar X
-[] Si se convierte 30 debe retornar XXX
+[X] Si se convierte 30 debe retornar XXX
 
 
 

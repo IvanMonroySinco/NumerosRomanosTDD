@@ -66,15 +66,18 @@ public class NumerosRomanosTest
         conversion.Should().Be("X"); 
     }
     
-    [Fact]
-    public void Si_SeConvierteNumeroTreinta_Debe_RetornarXXX()
+    [Theory]
+    [InlineData(10, "X"),InlineData(20, "XX"),InlineData(30, "XXX")]
+    public void Si_SeConvierteNumerosDecenas_Debe_RetornarNVecesX(int numero, string resultadoEsperado)
     {
         var numerosRomanos = new ConvertidorNumerosRomanos();
         
-        var conversion = numerosRomanos.Convertir(30);
+        var conversion = numerosRomanos.Convertir(numero);
         
-        conversion.Should().Be("XXX"); 
+        conversion.Should().Be(resultadoEsperado); 
     }
+    
+    
     
 }
 
@@ -82,12 +85,20 @@ public class ConvertidorNumerosRomanos
 {
     public string Convertir(int numero)
     {
+        if (numero >= 10)
+        {
+            int decenas = numero / 10;
+            int unidades = numero % 10;
+
+            string cadenaDecenas = new string('X', decenas);
+            string cadenaUnidades = Convertir(unidades);
+            return $"{cadenaDecenas}{cadenaUnidades}";
+        }
         if (numero == 4) return "IV";
         if (numero == 5) return "V";
         if (numero < 4) return new string('I', numero);
         if (numero < 9) return "V" + new string('I', numero - 5);
         if (numero == 9) return "IX";
-        if (numero == 10) return "X";
         return "";
     }
 }
