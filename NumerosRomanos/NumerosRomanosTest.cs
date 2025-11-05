@@ -65,6 +65,17 @@ public class NumerosRomanosTest
         
         conversion.Should().Be("X"); 
     }
+    
+    [Fact]
+    public void Si_SeConvierteNumeroTreinta_Debe_RetornarXXX()
+    {
+        var numerosRomanos = new ConvertidorNumerosRomanos();
+        
+        var conversion = numerosRomanos.Convertir(30);
+        
+        conversion.Should().Be("XXX"); 
+    }
+    
 }
 
 public class ConvertidorNumerosRomanos
