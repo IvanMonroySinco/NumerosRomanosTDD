@@ -138,13 +138,25 @@ public class NumerosRomanosTest
         var conversion = numerosRomanos.Convertir(900);
         
         conversion.Should().Be("CM"); 
-    }    
+    }
+    
+    
+    [Fact]
+    public void Si_ConvierteNumeroMil_Debe_RetornarM()
+    {
+        var numerosRomanos = new ConvertidorNumerosRomanos();
+        
+        var conversion = numerosRomanos.Convertir(1000);
+        
+        conversion.Should().Be("M"); 
+    }  
 }
 
 public class ConvertidorNumerosRomanos
 {
     private static readonly (int numero, string simbolo)[] MapaCaracteres =
-    {
+    {        
+        (900, "CM"),
         (500, "D"),
         (400, "CD"),
         (100, "C"),
