@@ -61,16 +61,11 @@ public class ConvertidorNumerosRomanos
 {
     public string Convertir(int numero)
     {
-        if (numero == 5)
-            return "V";
-        if (numero == 4)
-            return "IV";
-        if (numero < 4)
-            return new string('I', numero);
-        if (numero < 9)
-            return "V" + new string('I', numero - 5);
-        if (numero == 9)
-            return "IX";
-        return "I";
+        if (numero == 4) return "IV";
+        if (numero == 5) return "V";
+        if (numero < 4) return new string('I', numero);
+        if (numero < 9) return "V" + new string('I', numero - 5);
+        if (numero == 9) return "IX";
+        return "";
     }
 }
