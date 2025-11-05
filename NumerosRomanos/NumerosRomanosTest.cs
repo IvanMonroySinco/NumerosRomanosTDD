@@ -69,6 +69,8 @@ public class ConvertidorNumerosRomanos
             return new string('I', numero);
         if (numero < 9)
             return "V" + new string('I', numero - 5);
+        if (numero == 9)
+            return "IX";
         return "I";
     }
 }
