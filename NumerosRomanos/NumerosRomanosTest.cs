@@ -55,6 +55,16 @@ public class NumerosRomanosTest
         
         conversion.Should().Be("IX"); 
     }
+        
+    [Fact]
+    public void Si_SeConvierteNumeroDiez_Debe_RetornarX()
+    {
+        var numerosRomanos = new ConvertidorNumerosRomanos();
+        
+        var conversion = numerosRomanos.Convertir(10);
+        
+        conversion.Should().Be("X"); 
+    }
 }
 
 public class ConvertidorNumerosRomanos
